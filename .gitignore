@@ -142,3 +142,6 @@ crashlytics-build.properties
 *.db
 
 nohup*
+
+#checking router with simple flask script
+app.py
