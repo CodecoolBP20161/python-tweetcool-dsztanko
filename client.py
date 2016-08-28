@@ -8,6 +8,7 @@ import os
 class Client(object):
 
     def __init__(self):
+        os.system('clear')
         self.user_name = input('Please, add your user name to log in: ')
 
         parser = argparse.ArgumentParser()
@@ -44,7 +45,7 @@ class Client(object):
 
     @staticmethod
     def display_goodbye_message():
-        print('Thanks for using TWEETCOOL!\n')
+        print('\nThanks for using TWEETCOOL!\n')
 
     def menu(self):
         while True:
@@ -58,7 +59,7 @@ Enter:
     exit or CTRL+D -- to quit the application.
 {0}
 
-Option: '''.format(47*'-'))
+Option: '''.format(47*'-')).lower()
 
                 if option == 'refresh':
                     os.system('clear')
@@ -75,7 +76,7 @@ Option: '''.format(47*'-'))
                     try:
                         self.post_tweet(input('Post a tweet: '))
                     except UnicodeDecodeError as e:
-                        print(e)
+                        print('Not Allowed Character Error: %s. Restart to post again.' % e)
                         exit()
                 elif option == 'exit':
                     self.display_goodbye_message()
